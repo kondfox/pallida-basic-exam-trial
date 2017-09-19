@@ -20,10 +20,15 @@ namespace NameFromEmail
             string firstNameNonCapital = emailSplitted[0];
             string lastNameNonCapital = emailSplitted[1];
 
-            string firstName = firstNameNonCapital.Substring(0, 1).ToUpper() + firstNameNonCapital.Substring(1);
-            string lastName = lastNameNonCapital.Substring(0, 1).ToUpper() + lastNameNonCapital.Substring(1);
+            string firstName = Camelizer(firstNameNonCapital);
+            string lastName = Camelizer(lastNameNonCapital);
 
             return lastName + " " + firstName;
+        }
+
+        private static string Camelizer(string word)
+        {
+            return word.Substring(0, 1).ToUpper() + word.Substring(1);
         }
     }
 }
