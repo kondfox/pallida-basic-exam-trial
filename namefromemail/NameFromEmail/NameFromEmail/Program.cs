@@ -23,7 +23,7 @@ namespace NameFromEmail
             string firstName = Camelizer(firstNameNonCapital);
             string lastName = Camelizer(lastNameNonCapital);
 
-            return lastName + " " + firstName;
+            return string.Format("{0} {1}", lastName, firstName);
         }
 
         private static string Camelizer(string word)
